@@ -60,15 +60,8 @@
                                         </Template>
                                     </FormItem>
                                     <FormItem Field="@nameof(settingsModel.Website)"></FormItem>
-                                </FormGroup>
-                                <FormGroup>
-                                    <FormItem Field="@nameof(settingsModel.Country)" LabelText="Country">
-                                        <Template>
-                                            Country
-                                            <TelerikDropDownList Data="@settingsModel.Country" TextField="MyTextField" ValueField="MyValueField" @bind-Value="selectedValue" Width="100%">
-                                            </TelerikDropDownList>
-                                        </Template>
-                                    </FormItem>
+                                </FormGroup>                                
+                                <FormGroup>                              
                                     <FormItem Field="@nameof(settingsModel.Phone)"></FormItem>
                                 </FormGroup>
                             </FormItems>
@@ -77,52 +70,6 @@
                         </TelerikForm>
                     </div>
                     <br />
-                    <div>
-                        <TelerikSwitch @bind-Value="@switchValue"
-                                       Width="70px"
-                                       OnLabel="On"
-                                       OffLabel="Off">
-                        </TelerikSwitch> Public Profile
-                        <TelerikButton Class="disabled-btn" OnClick=@(()=> WindowVisible = true) ThemeColor="@(ThemeConstants.Button.ThemeColor.Primary)">Save Changes</TelerikButton>
-                    </div>
-                </div>
-            </Content>
-        </TileLayoutItem>
-        <TileLayoutItem HeaderText="Date" RowSpan="1" ColSpan="1">
-            <Content>
-                <div style="display:flex; justify-content:center; flex-direction:row; align-content:center;height:100%">
-                    <TelerikCalendar Min="@min" Max="@max" ValueChanged="@MyValueChangeHandler" @bind-Date="@theDate">
-                    </TelerikCalendar>
-                </div>
-            </Content>
-        </TileLayoutItem>
-        <TileLayoutItem RowSpan="1" ColSpan="1">
-            <HeaderTemplate>
-                <span class="k-card-title">Weather</span>
-                <span class="k-spacer k-toolbar-spacer"></span>
-                <a class="k-card-title k-link" style="float: right; color: #0058E9 "><span class="k-icon k-i-globe" style="margin-right:9px;"></span><span>Sofia</span></a>
-            </HeaderTemplate>
-            <Content>
-                <div class="k-d-flex-col k-align-items-center k-justify-content-around">
-                    <div class="cloudImg" style="width: 100px; height: 100px;"></div>
-                    <div class="k-state-disabled">Partly Cloudy</div>
-                    <div style="font-size: 70px; line-height: 84px; color: #0058E9">12 °C</div>
-                </div>
-                <div class="k-card-footer">
-                    <div class="weather-data-container k-d-flex-row k-align-items-center k-justify-content-center">
-                        <div>
-                            Humidity:<br>
-                            Dew:<br>
-                            Pressure:<br>
-                            Wind Speed:
-                        </div>
-                        <div>
-                            76%<br>
-                            2˚C<br>
-                            1031mb<br>
-                            12km/h NW
-                        </div>
-                    </div>
                 </div>
             </Content>
         </TileLayoutItem>
@@ -151,23 +98,6 @@
         z-index: 44444;
     }
 
-    .weather-data-container {
-        padding: 8px 0px 0px;
-        gap: 18px
-    }
-
-        .weather-data-container > div {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 16px;
-        }
-
-            .weather-data-container > div:nth-child(1) {
-                font-weight: bold;
-                text-align: right;
-            }
-
     .k-justify-content-around {
         justify-content: normal;
     }
@@ -181,7 +111,4 @@
         margin-top: 75px;
     }
 
-    .cloudImg {
-        background: url("/assets/settings/cloud.svg");
-    }
 </style>

@@ -18,8 +18,6 @@ namespace BookApp.Models
         [Required]
         public DateTime BirthDate { get; set; }
 
-        public List<MyDropDownListModel> Country { get; set; }
-
         public string Website { get; set; }
     }
 }

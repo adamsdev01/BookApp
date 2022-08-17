@@ -1,5 +1,4 @@
-﻿using BookApp.Data;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +22,6 @@ namespace BookApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddTelerikBlazor();
-            services.AddScoped<IDataService, DataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

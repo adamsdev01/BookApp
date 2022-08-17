@@ -73,12 +73,12 @@
             <TelerikButton OnClick="@( () => DrawerRef.ToggleAsync() )" Icon="menu" Class="drawer-hamburger"></TelerikButton>
             <div class="top-row px-4">
                 <NavLink href="/about" style="text-decoration: none; color: #424242">About</NavLink>
-                <a href="https://docs.telerik.com/blazor-ui/introduction#support-options" style="text-decoration: none; color: #424242" target="_blank">Contacts</a>
             </div>
 
             <div class="content px-4">
                 @Body
             </div>
+
         </div>
     </DrawerContent>
 </TelerikDrawer>
@@ -91,8 +91,6 @@
     List<DrawerItem> NavigablePages { get; set; } = new List<DrawerItem>
     {
             new DrawerItem { Text = "Dashboard", Url = "/", Icon = "grid" },
-            new DrawerItem { Text = "Performance & Sales", Url = "/performance-and-sales", Icon = "globe" },
-            new DrawerItem { Text = "Products", Url = "/products", Icon = "aggregate-fields" },
             new DrawerItem { Text = "Settings", Url = "/settings", Icon = "gear" }
     };
 
