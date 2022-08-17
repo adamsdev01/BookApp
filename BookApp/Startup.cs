@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BookApp.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +24,10 @@ namespace BookApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddTelerikBlazor();
+
+            #region Connection String
+            services.AddDbContext<BookAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
